@@ -1,7 +1,9 @@
 package fr.sm.asojbackend.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
@@ -14,8 +16,11 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Data
-@RequiredArgsConstructor
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
+@ToString
 @Table(name = "empls")
 public class Employee {
     @Id

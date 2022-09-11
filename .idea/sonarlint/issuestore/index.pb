@@ -21,3 +21,13 @@ e
 5asoj-frontend/src/app/employee/add/add.component.html,5/2/5257a2cbab8bceb06bfd451f4a0f30fa7372251f
 a
 1asoj-frontend/src/app/employee/employee.module.ts,c/2/c2b1fdc42a79601b191d6538400345a71847d51f
+W
+'asoj-frontend/src/app/model/employee.ts,7/0/7004d47ad2dfa41f699d430177cfecbe0fd0c632
+r
+Basoj-backend/src/main/java/fr/sm/asojbackend/config/WebConfig.java,5/3/5354d113dfd2c623508ff819ff2602ee46f364f2
+x
+Hasoj-backend/src/main/java/fr/sm/asojbackend/AsojBackendApplication.java,2/7/275cef61433618c39aee70c75f5dea3024c1f9b3
+f
+6asoj-frontend/src/app/employee/list/list.component.css,8/1/81df09c915722afe989c026231d5a77c9a78b66d
+g
+7asoj-frontend/src/app/employee/list/list.component.html,5/e/5ed69e35e8c5ca6770176e8fe780afbeeb341943

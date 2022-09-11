@@ -13,6 +13,11 @@ import org.springframework.security.web.SecurityFilterChain;
 public class SecurityConfig {
     @Bean
     SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-        return http.formLogin().disable().build();
+        return http.csrf().disable()
+                .authorizeRequests()
+                .anyRequest().permitAll()
+                .and()
+                .formLogin().disable().build();
+
     }
 }
