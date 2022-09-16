@@ -1,8 +1,6 @@
-<div class="table_background">
-
-  <table class="member">
-      <caption><h2>Employee List</h2></caption>
-    <button type="button" id="btn-add" class="btn btn-primary">Add</button>
+<table class="listEmp">
+  <h2 style="color: purple">Employee List</h2>
+    <thead class="listTable">
       <tr>
         <th scope="col">ID</th>
         <th scope="col">Name</th>
@@ -12,6 +10,8 @@
         <th scope="col">Role</th>
         <th scope="col">Option</th>
       </tr>
+    </thead>
+    <tbody>
       <tr *ngFor="let emp of empls">
         <td>{{emp.id}}</td>
         <td>{{emp.name}}</td>
@@ -21,6 +21,6 @@
         <td>{{emp.role}}</td>
         <td><button class="btn btn-primary" id="btn-delete" (click)="deleteEmployee()">Delete</button></td>
       </tr>
-
+    </tbody>
   </table>
-</div>
+

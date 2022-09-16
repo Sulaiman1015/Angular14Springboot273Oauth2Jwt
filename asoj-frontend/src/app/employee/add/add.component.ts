@@ -9,7 +9,7 @@ import { Employee } from 'src/app/model/employee';
   styleUrls: ['./add.component.css']
 })
 export class AddComponent implements OnInit {
-  empl!: Employee;
+
 
   constructor(private employeeService: EmployeeService) { }
 

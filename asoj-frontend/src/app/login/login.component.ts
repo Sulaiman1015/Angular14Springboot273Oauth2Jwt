@@ -8,6 +8,7 @@ declare var loginjs: any
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
+  loginForm: any;
 
 
   constructor() {
@@ -18,4 +19,7 @@ export class LoginComponent implements OnInit {
      new loginjs();
   }
 
+  loginSubmit() {
+
+  }
 }
