@@ -1,47 +1,44 @@
 package fr.sm.asojbackend.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.RequiredArgsConstructor;
-import lombok.Setter;
-import lombok.ToString;
-
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+import javax.persistence.UniqueConstraint;
+import java.util.Date;
 
 @Entity
-@Getter
-@Setter
+@Data
 @NoArgsConstructor
-@AllArgsConstructor
-@ToString
-@Table(name = "empls")
+@Table(name = "EMPLS",uniqueConstraints = {@UniqueConstraint(name = "EMPLOYEE_NAME", columnNames = {"EMP_NAME"})})
 public class Employee {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "ID")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "EMP_SEQ")
+    @SequenceGenerator(name = "EMP_SEQ", sequenceName = "EMP_SEQ", allocationSize = 1)
     private Integer id;
 
-    @Column(length = 20, nullable = false)
+    @Column(name = "EMP_NAME", length = 30, nullable = false)
     private String name;
 
-    @Column(length = 10, nullable = false)
+    @Column(name = "GENDER", length = 10, nullable = false)
     private String gender;
 
-    @Column(length = 10, nullable = false)
-    private int age;
+    @Column(name = "BIRTHDAY", length = 30, nullable = false)
+    private String birthDay;
 
+    @Column(name = "TITLE", length = 20, nullable = false)
+    private String title;
 
-    @Column(length = 20, nullable = false)
-    private String country;
-
-    @Column(length = 20, nullable = false)
-    private String role;
-
+    @Column(name = "HIRE_DATE", updatable = false, nullable = false)
+    @Temporal(TemporalType.TIMESTAMP)
+    private Date hireDate;
 
 }

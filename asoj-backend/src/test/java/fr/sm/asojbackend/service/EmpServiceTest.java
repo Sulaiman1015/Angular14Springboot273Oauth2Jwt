@@ -13,6 +13,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Date;
 import java.util.List;
 
 
@@ -20,14 +21,14 @@ import java.util.List;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class EmplServiceTest {
+class EmpServiceTest {
 
     private final Employee emp = new Employee();
-    private final EmplService emplService;
+    private final EmpService empService;
 
     @Autowired
-    EmplServiceTest(EmplService emplService) {
-        this.emplService = emplService;
+    EmpServiceTest(EmpService empService) {
+        this.empService = empService;
     }
 
    /* @BeforeEach
@@ -43,42 +44,42 @@ class EmplServiceTest {
     @Test
     @Order(1)
     void getAll() {
-        List<Employee> employees = emplService.getAll();
+        List<Employee> employees = empService.getAll();
         assertThat(employees).hasSize(5);
     }
 
     @Test
     @Order(2)
     void getOne() {
-        Employee emp = emplService.getOne(2);
+        Employee emp = empService.getOne(2);
         assertThat(emp.getName()).isEqualTo("empl_2");
     }
 
     @Test
     @Order(3)
     void deleteEmployee() {
-        emplService.deleteEmployee(2);
-        assertThat(emplService.getAll()).hasSize(4);
+        empService.deleteEmployee(2);
+        assertThat(empService.getAll()).hasSize(4);
     }
 
     @Test
     @Order(4)
     void addEmployee() {
         emp.setName("Sulaiman");
-        emp.setAge(45);
+        emp.setBirthDay("01-07-2019");
         emp.setGender("Male");
-        emp.setRole("Administrator");
-        emp.setCountry("United States");
-        emplService.addEmployee(emp);
-        Employee newEmp = emplService.getOne(emp.getId());
+        emp.setTitle("Manager");
+        emp.setHireDate(new Date());
+        empService.addEmployee(emp);
+        Employee newEmp = empService.getOne(emp.getId());
         assertThat(newEmp).isNotNull();
     }
 
     @Test
     @Order(5)
     void updateEmployee() {
-        Employee emp = emplService.getOne(5);
-        emp.setAge(45);
-        assertThat(emp.getAge()).isEqualTo(45);
+        Employee emp = empService.getOne(5);
+        emp.setBirthDay("01-07-2019");
+        assertThat(emp.getBirthDay()).isEqualTo("01-07-2019");
     }
 }

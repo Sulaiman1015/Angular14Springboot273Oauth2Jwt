@@ -1,2 +1,5 @@
-package fr.sm.asojbackend.entity;public enum AuthorityName {
+package fr.sm.asojbackend.entity;
+
+public enum AuthorityName {
+    ROLE_USER, ROLE_ADMIN
 }

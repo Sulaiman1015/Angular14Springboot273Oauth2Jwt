@@ -7,6 +7,6 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 
 @RepositoryRestResource
-public interface EmplRepo extends JpaRepository<Employee, Integer> {
+public interface EmpRepo extends JpaRepository<Employee, Integer> {
 
 }

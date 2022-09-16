@@ -1,8 +1,7 @@
 package fr.sm.asojbackend.controller;
 
 import fr.sm.asojbackend.entity.Employee;
-import fr.sm.asojbackend.exception.NotFoundException;
-import fr.sm.asojbackend.service.EmplService;
+import fr.sm.asojbackend.service.EmpService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,47 +26,47 @@ import java.util.List;
 @RestController
 @RequestMapping(value = "/api/empls")
 @Validated
-public class EmplController {
+public class EmpController {
 
-    private static final Logger logger = LoggerFactory.getLogger(EmplController.class);
-    private final EmplService emplService;
+    private static final Logger logger = LoggerFactory.getLogger(EmpController.class);
+    private final EmpService empService;
 
     @Autowired
-    public EmplController(EmplService emplService) {
-        this.emplService = emplService;
+    public EmpController(EmpService empService) {
+        this.empService = empService;
     }
 
 
     @GetMapping()
     public List<Employee> getEmpls() {
-        return emplService.getAll();
+        return empService.getAll();
     }
 
     //get one by id
     @GetMapping("/{id}")
     public Employee getEmpl(@PathVariable("id") Integer id){
-        return emplService.getOne(id);
+        return empService.getOne(id);
     }
 
 
     //delete one by id
     @DeleteMapping("/del/{id}")
     public void deleteEmpl(@PathVariable("id") Integer id) {
-        emplService.deleteEmployee(id);
+        empService.deleteEmployee(id);
     }
 
     //update
     @PutMapping("/update")
     @ResponseStatus(code= HttpStatus.CREATED)
     public Employee updateEmpl(@RequestBody Employee emp) {
-        return emplService.updateEmployee(emp);
+        return empService.updateEmployee(emp);
     }
 
     //save
     @PostMapping("/add")
     @ResponseStatus(code= HttpStatus.CREATED)
     public Employee addEmpl(@Valid @RequestBody Employee emp) {
-         return emplService.addEmployee(emp);
+         return empService.addEmployee(emp);
     }
 
 

@@ -1,27 +1,27 @@
 package fr.sm.asojbackend.service;
 
 import fr.sm.asojbackend.entity.Employee;
-import fr.sm.asojbackend.repository.EmplRepo;
+import fr.sm.asojbackend.repository.EmpRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EmplService {
+public class EmpService {
 
-    private final  EmplRepo emplRep;
+    private final EmpRepo empRepo;
 
     @Autowired
-    public EmplService(EmplRepo emplRep) {
-        this.emplRep = emplRep;
+    public EmpService(EmpRepo empRepo) {
+        this.empRepo = empRepo;
     }
 
     public List<Employee> getAll() {
-        return emplRep.findAll();
+        return empRepo.findAll();
     }
 
     public Employee getOne(Integer id) {
-        return emplRep.findById(id).orElseThrow(()->new IllegalStateException("No such employee"));
+        return empRepo.findById(id).orElseThrow(()->new IllegalStateException("No such employee"));
     }
 
     public void deleteEmployee(Integer id) {
@@ -29,7 +29,7 @@ public class EmplService {
         if (emp == null) {
             throw new IllegalStateException("Employee not found");
         }else{
-            emplRep.deleteById(id);
+            empRepo.deleteById(id);
         }
 
     }
@@ -38,10 +38,10 @@ public class EmplService {
         Employee emp = new Employee();
         emp.setName(employee.getName());
         emp.setGender(employee.getGender());
-        emp.setAge(employee.getAge());
-        emp.setCountry(employee.getCountry());
-        emp.setRole(employee.getRole());
-        return emplRep.save(employee);
+        emp.setTitle(employee.getTitle());
+        emp.setBirthDay(employee.getBirthDay());
+        emp.setHireDate(employee.getHireDate());
+        return empRepo.save(employee);
     }
 
     public Employee updateEmployee(Employee emp) {
@@ -51,7 +51,7 @@ public class EmplService {
         emp.setAge(emp.getAge());
         emp.setCountry(emp.getCountry());
         emp.setRole(emp.getRole());*/
-        return emplRep.save(emp);
+        return empRepo.save(emp);
 
     }
 /**********************************************************/
@@ -62,7 +62,7 @@ public class EmplService {
         emp.setAge(emp.getAge());
         emp.setCountry(emp.getCountry());
         emp.setRole(emp.getRole());
-        return emplRep.save(emp);
+        return empRepo.save(emp);
     }*/
 
 
