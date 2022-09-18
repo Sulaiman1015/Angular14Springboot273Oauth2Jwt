@@ -1,0 +1,157 @@
+
+.listEmp {
+  display: flex;
+  background-color: white;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  margin-bottom: 10vh;
+  margin-top: 5vh;
+  box-shadow: 0px 0px 10px rgba(114, 114, 113, 0.5);
+  border-radius: 5px;
+  font-family: futura-pt, sans-serif;
+}
+
+.search {
+  float: right;
+}
+
+button{
+  background-color: purple;
+  font-size: 18px;
+  width:80px;
+  height:25px;
+  text-align:center;
+  border-radius: 3px;
+  border: 0;
+}
+
+table {
+  font-weight: 400;
+  font-style: normal;
+  border-collapse: collapse;
+  width: 100%;
+  border-radius: 5px;
+  overflow: hidden;
+}
+.addEmp{
+  margin-left: 20px;
+}
+.sea input {
+
+  border: 2px solid #7BA7AB;
+
+  border-radius: 5px;
+
+  background: #F9F0DA;
+
+  color: #9E9C9C;
+
+}
+
+.bar1 button {
+
+  top: 0;
+
+  right: 0;
+
+  background: #7BA7AB;
+
+  border-radius: 0 5px 5px 0;
+
+}
+
+.bar1 button:before {
+
+  content: "\f002";
+
+  font-family: FontAwesome;
+
+  font-size: 16px;
+
+  color: #F9F0DA;
+
+}
+
+
+
+th {
+  font-size: 18px;
+  text-align: left;
+  padding: 20px 20px 20px 20px;
+}
+
+table,
+td {
+  padding: 8px 8px 8px 20px;
+}
+
+tr:nth-child(even) {
+  background-color: #eff2f5;
+}
+
+tr:not(:first-child):hover {
+  background-color: rgba(114, 114, 113, 0.2);
+}
+#btn-delete{
+  width:80px;
+  height:30px;
+  text-align:center;
+  border-radius: 5px;
+  margin-left: 2px;
+}
+
+
+
+
+
+
+
+
+
+
+/*table{
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table caption{
+
+  font-size: 2em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+th,td{
+
+  border: 1px solid #999;
+  text-align: center;
+  padding: 10px 0;
+}
+
+table thead tr{
+
+  background-color: #008c8c;
+  color: #fff;
+}
+
+table tbody tr:nth-child(odd){
+
+  background-color: #eee;
+}
+
+table tbody tr:hover{
+
+  background-color: #ccc;
+}
+
+table tbody tr td:first-child{
+
+  color: #f40;
+}
+
+table tfoot tr td{
+
+  text-align: right;
+  padding-right: 20px;
+}*/
+

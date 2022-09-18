@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/Angular14Springboot273Oauth2Jwt.iml" filepath="$PROJECT_DIR$/.idea/Angular14Springboot273Oauth2Jwt.iml" />
+      <module fileurl="file://$PROJECT_DIR$/asoj-backend/asoj-backend.iml" filepath="$PROJECT_DIR$/asoj-backend/asoj-backend.iml" />
+    </modules>
+  </component>
+</project>

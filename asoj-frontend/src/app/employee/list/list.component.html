@@ -1,0 +1,26 @@
+<table class="listEmp">
+  <h2 style="color: purple">Employee List</h2>
+    <thead class="listTable">
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Age</th>
+        <th scope="col">Country</th>
+        <th scope="col">Role</th>
+        <th scope="col">Option</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let emp of empls">
+        <td>{{emp.id}}</td>
+        <td>{{emp.name}}</td>
+        <td>{{emp.gender}}</td>
+        <td>{{emp.age}}</td>
+        <td>{{emp.country}}</td>
+        <td>{{emp.role}}</td>
+        <td><button class="btn btn-primary" id="btn-delete" (click)="deleteEmployee()">Delete</button></td>
+      </tr>
+    </tbody>
+  </table>
+
